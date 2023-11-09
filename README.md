@@ -17,3 +17,5 @@
 ### これで一旦TeX Liveのインストールは完了
 
 ## VScodeの拡張機能のインストール
+![vscode拡張](https://github.com/YonedaRyo/Latex-VScode/assets/107024163/562d51db-f874-47b3-9558-331a53332530)
+LaTeX Workshopをインストールする
