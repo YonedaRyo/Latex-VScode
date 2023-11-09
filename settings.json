@@ -200,37 +200,4 @@
         "*.nav",
         "*.snm"
     ],
-
-"[python]": {
-    "editor.formatOnType": true
-},
-"explorer.confirmDelete": false,
-"explorer.confirmDragAndDrop": false,
-"latex-workshop.latex.autoClean.run": "onBuilt",
-"latex-workshop.selection.smart.latex.enabled": false,
-"workbench.editorAssociations": {
-    "*.pdf": "pdf.preview"
-},
-"editor.inlineSuggest.enabled": true,
-"workbench.iconTheme": "vscode-icons",
-"github.copilot.enable": {
-    "*": true,
-    "plaintext": true,
-    "markdown": true,
-    "scminput": false
-},
-"markdown.marp.themes": [
-    "https://raw.githubusercontent.com/Okome05/Marp/main/academic.css"
-    ],
-"[markdown]":  {
-    "editor.wordWrap": "on",
-    "editor.quickSuggestions": {
-        "comments": "on",
-        "strings": "on",
-        "other": "on"
-    },
-    "editor.snippetSuggestions": "top"
-    },
-"editor.fontSize": 15,
-"files.autoSave": "afterDelay"
 }
