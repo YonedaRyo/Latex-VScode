@@ -2,7 +2,7 @@
 このレポジトリはWindows環境でVScodeをコードエディタとした際のLatex環境構築を前提としています
 
 ## VScodeのインストール
-ここは既に使っていると思うので割愛します．．
+ここは既に使っていると思うので割愛します．．  
 一応ここからインストールできます．  
 [Visual Studio Code](https://code.visualstudio.com/)
 
