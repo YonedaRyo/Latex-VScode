@@ -3,6 +3,8 @@
 
 ## VScodeのインストール
 ここは既に使っていると思うので割愛します．．
+一応ここからインストールできます．  
+[Visual Studio Code](https://code.visualstudio.com/)
 
 ## TeX Liveのインストール
 [TeX Live](https://www.tug.org/texlive/acquire-netinstall.html)をこのサイトからinstall-tl-windows.exeをクリックしてインストールする
