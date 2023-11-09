@@ -19,7 +19,55 @@
 ## VScodeの拡張機能のインストール
 ![vscode拡張](https://github.com/YonedaRyo/Latex-VScode/assets/107024163/562d51db-f874-47b3-9558-331a53332530)
 LaTeX Workshopをインストールする
-LaTeX Workshopを入れて.texのファイルを開くと左側にTEXと書かれた拡張機能が追加されます
+LaTeX Workshopを入れて.texのファイルを開くと左側にTEXと書かれた拡張機能が追加されます.
+ここまで出来れば，ローカル環境でVScodeをコードエディタとして使用したLaTeXの基本環境が構築できました！！
+
+# これをしておくと便利なこと
+## VScodeのsettings.jsonを書き換えてLaTeXのレシピを作っておく
+何も設定していないと，せっかく環境作っても便利じゃない．．  
+そこで，自分がよく使うLaTeXレシピを作っておいて１クリックでコンパイルする．  
+例えば，修論や卒論ではbibtexを使うと便利なので，それ用のレシピとか  
+```
+"latex-workshop.latex.tools": [
+        {
+            "command": "bibtex",
+            "args": [
+                "%DOCFILE%"
+            ],
+            "name": "bibtex",
+        },
+        {
+            "command": "ptex2pdf",
+            "args": [
+                "-interaction=nonstopmode",
+                "-l",
+                "-ot",
+                "-kanji=utf8 -synctex=1",
+                "%DOC%.tex"
+            ],
+            "name":"ptex2pdf",
+        },
+],
+ "latex-workshop.latex.recipes": [
+ {
+    "name": "ptex2pdf",
+    "tools": [
+        "ptex2pdf"
+    ]
+ },
+ {
+    "name": "ptex2pdf -> pbibtex -> ptex2pdf*2",
+    "tools": [
+        "ptex2pdf",
+        "pbibtex",
+        "ptex2pdf",
+        "ptex2pdf"
+    ]
+ },
+]
+```
+こんな感じで，latex-workshop.latex.toolsにはLaTeXエンジンツールを，latex-workshop.latex.recipesにはレシピを記述しておく．  
+"name": "ptex2pdf -> pbibtex -> ptex2pdf*2"はbibtexを使った，論文によく使います．ただ，pLaTeXも古いのでその内ダメになると思う．
 
 ## 自分がどのLaTeXエンジンを使っているか知りたい時
 hello.texを使用して確認することができます．
