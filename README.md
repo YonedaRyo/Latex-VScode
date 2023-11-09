@@ -19,6 +19,7 @@
 ## VScodeの拡張機能のインストール
 ![vscode拡張](https://github.com/YonedaRyo/Latex-VScode/assets/107024163/562d51db-f874-47b3-9558-331a53332530)
 LaTeX Workshopをインストールする
+LaTeX Workshopを入れて.texのファイルを開くと左側にTEXと書かれた拡張機能が追加されます
 
 ## 自分がどのLaTeXエンジンを使っているか知りたい時
 hello.texを使用して確認することができます．
