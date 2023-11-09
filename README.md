@@ -68,6 +68,7 @@ LaTeX Workshopを入れて.texのファイルを開くと左側にTEXと書か�
 ```
 latex-workshop.latex.toolsにはLaTeXツールを，latex-workshop.latex.recipesにはレシピを記述しておく．  
 "name": "ptex2pdf -> pbibtex -> ptex2pdf*2"はbibtexを使うときによく使います．ただし，pLaTeXも古いのでその内ダメになると思う．
+めんどくさかったら，僕が使うレシピをまとめたsettings.jsonがあるので使ってください．
 
 ## 自分がどのLaTeXエンジンを使っているか知りたい時
 hello.texを使用して確認することができます．
