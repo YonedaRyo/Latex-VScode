@@ -26,7 +26,7 @@ LaTeX Workshopを入れて.texのファイルを開くと左側にTEXと書か�
 ## VScodeのsettings.jsonを書き換えてLaTeXのレシピを作っておく
 何も設定していないと，せっかく環境作っても便利じゃない．．  
 そこで，自分がよく使うLaTeXレシピを作っておいて１クリックでコンパイルする．  
-例えば，修論や卒論ではbibtexを使うと便利なので，それ用のレシピとか  
+例えば，修論や卒論ではbibtexを使うと便利なのでそれ用のレシピとか  
 ```
 "latex-workshop.latex.tools": [
         {
@@ -66,8 +66,8 @@ LaTeX Workshopを入れて.texのファイルを開くと左側にTEXと書か�
  },
 ]
 ```
-こんな感じで，latex-workshop.latex.toolsにはLaTeXエンジンツールを，latex-workshop.latex.recipesにはレシピを記述しておく．  
-"name": "ptex2pdf -> pbibtex -> ptex2pdf*2"はbibtexを使った，論文によく使います．ただ，pLaTeXも古いのでその内ダメになると思う．
+latex-workshop.latex.toolsにはLaTeXツールを，latex-workshop.latex.recipesにはレシピを記述しておく．  
+"name": "ptex2pdf -> pbibtex -> ptex2pdf*2"はbibtexを使うときによく使います．ただし，pLaTeXも古いのでその内ダメになると思う．
 
 ## 自分がどのLaTeXエンジンを使っているか知りたい時
 hello.texを使用して確認することができます．
