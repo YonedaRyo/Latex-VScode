@@ -15,8 +15,11 @@
 警告文が出ると思いますがそのまま無視してもらって大丈夫です．少し待てば次の画像の画面に遷移します．  
 ![インストール](https://github.com/YonedaRyo/Latex-VScode/assets/107024163/b1f0c689-be40-4bb6-a8b8-0ba96bb318b4)
 何も変える必要なければ，インストールをクリックしてインストールを開始します．完了まで1時間程度かかります．．．
-
-これで一旦TeX Liveのインストールは完了
+<img width="346" alt="3" src="https://github.com/YonedaRyo/Latex-VScode/assets/107024163/f8937a6a-98fe-4ed2-b620-534ef5668921">
+これで一旦TeX Liveのインストールは完了  
+### LaTeXの起動確認
+コマンドプロンプト上でlatexと打ってみて，画像のようになればOK!
+<img width="464" alt="4" src="https://github.com/YonedaRyo/Latex-VScode/assets/107024163/8cbb1709-08a5-4b1a-b7d5-026e18c6a14a">
 
 ## VScodeの拡張機能のインストール
 ![vscode拡張](https://github.com/YonedaRyo/Latex-VScode/assets/107024163/562d51db-f874-47b3-9558-331a53332530)
