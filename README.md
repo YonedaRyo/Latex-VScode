@@ -19,3 +19,8 @@
 ## VScodeの拡張機能のインストール
 ![vscode拡張](https://github.com/YonedaRyo/Latex-VScode/assets/107024163/562d51db-f874-47b3-9558-331a53332530)
 LaTeX Workshopをインストールする
+
+## 自分がどのLaTeXエンジンを使っているか知りたい時
+hello.texを使用して確認することができます．
+自分がよく使うのはplatex+dvifmxの組み合わせです．
+![hikaku](https://github.com/YonedaRyo/Latex-VScode/assets/107024163/816e90b6-f8d7-4df3-ab6e-e257ffaa77c0)
