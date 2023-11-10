@@ -15,6 +15,7 @@
 警告文が出ると思いますがそのまま無視してもらって大丈夫です．少し待てば次の画像の画面に遷移します．  
 ![インストール](https://github.com/YonedaRyo/Latex-VScode/assets/107024163/b1f0c689-be40-4bb6-a8b8-0ba96bb318b4)
 何も変える必要なければ，インストールをクリックしてインストールを開始します．  
+何も設定せず，全て入れた場合8GB近い容量です．高度な設定で必要なものだけ入れてもいいと思います．2GBくらい  
 完了まで2時間程度かかります．．  
 <img width="346" alt="3" src="https://github.com/YonedaRyo/Latex-VScode/assets/107024163/f8937a6a-98fe-4ed2-b620-534ef5668921">  
 これで一旦TeX Liveのインストールは完了  
