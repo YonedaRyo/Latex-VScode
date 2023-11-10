@@ -82,3 +82,7 @@ latex-workshop.latex.toolsにはLaTeXツールを，latex-workshop.latex.recipes
 hello.texを使用して確認することができます．
 自分がよく使うのはplatex+dvifmxの組み合わせです．
 ![hikaku](https://github.com/YonedaRyo/Latex-VScode/assets/107024163/816e90b6-f8d7-4df3-ab6e-e257ffaa77c0)
+
+## LaTeXの基本をまとめておきました．
+latex_study.pdfに基本をまとめています．  
+bibの使い方や図，表の使い方も入っているので使い方わからない人は見てもいいかも．
