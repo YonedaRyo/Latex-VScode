@@ -19,7 +19,7 @@
 <img width="346" alt="3" src="https://github.com/YonedaRyo/Latex-VScode/assets/107024163/f8937a6a-98fe-4ed2-b620-534ef5668921">  
 これで一旦TeX Liveのインストールは完了  
 ### LaTeXの起動確認
-コマンドプロンプト上でlatexと打ってみて，画像のようになればOK!
+コマンドプロンプト上でlatexと打ってみて，画像のようになればOK!  
 <img width="464" alt="4" src="https://github.com/YonedaRyo/Latex-VScode/assets/107024163/8cbb1709-08a5-4b1a-b7d5-026e18c6a14a">
 
 ## VScodeの拡張機能のインストール
