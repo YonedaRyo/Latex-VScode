@@ -1,0 +1,348 @@
+%%%%%%%%%% Beamerの初期設定 %%%%%%%%%%%
+% beamerを使用する初期設定
+\documentclass[aspectratio=169, dvipdfmx, 12pt]{beamer}
+% 使用するパッケージ
+\usepackage{here, amsmath, latexsym, amssymb, bm, ascmac, mathtools, multicol, tcolorbox, subfig, url}
+\usepackage{hyperref}
+\usepackage{pxjahyper} % 日本語対応 (使わないともくじ部分が文字化けする)
+
+% デザインの選択 (省略可)
+%\usetheme{Metropolis}
+%\usecolortheme{orchid}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%% Beamerの基本的なコード %%%%%%%%%%
+% 属性
+\title{LaTeXマニュアル}
+\subtitle{}
+\author[著者略称]{米田 竜}
+\institute[所属略称]{産業用ロボット研究室}
+\date{\today}
+
+% スライドの始まり
+\begin{document}
+
+%%%%%%%%%%%%% タイトルページ%%%%%%%%%%%%%
+\frame{\maketitle}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}
+  {\Large 目次}
+   \tableofcontents  
+  \end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ページの作成
+\section{LaTeXの基本}
+\begin{frame}{LaTeXとは}
+    TeXとは，ドナルド・クヌース(Donald E.Knuth)によって生み出された文書作成ソフトウェアである．\\
+    論文などの文書を作成するのに適しており，論文を書く際はTeXを使用することが多い．
+  \begin{block}{TeXの特徴}
+    \begin{itemize}
+      \item 文書の体裁を自由に設定できる
+      \item 表の作成や数式の記述が簡単にできる
+      \item 表や図のキャプションが自動で行われる
+      \item 参考文献の管理が簡単にできる
+    \end{itemize}
+  \end{block}
+\end{frame}
+
+\begin{frame}{TeXのインストール}
+  TeXのインストールについて参考になるサイトを載せておきます．
+  紹介しているサイトは自分が過去に，TeX環境を構築した際に参考にしたサイトです．
+  インストールに関してはOSごとに様々な方法がありますので，自分の良いと思う方法で行ってください．
+  \begin{block}{参考サイト}
+    Windows\\
+    {\color{blue}\url{http://www.ic.daito.ac.jp/~mizutani/tex/install_win.html}}\cite{WinTeX}\\
+    Mac\\
+    {\color{blue}\url{https://texwiki.texjp.org/?TeXShop}}\cite{MacTeX}
+  \end{block}
+\end{frame}
+
+\begin{frame}{環境構築がめんどくさい人向け}
+  PCに環境を構築しなくても，Web上でTeXを使用することができます．
+  \begin{block}{参考サイト}
+    Overleaf\\
+    {\color{blue}\url{https://www.overleaf.com/}}\cite{Overleaf}\\
+    Cloud LaTeX\\
+    {\color{blue}\url{https://cloudlatex.io/ja}}\cite{CloudLaTeX}\\
+    CloudLaTeXとVScodeの連携\\
+    {\color{blue}\url{https://nkgtt.hatenablog.jp/entry/2020/12/24/000000}}\cite{VScode}
+  \end{block}
+  OverleafよりもCloud LaTeXの方が使いやすいようです．\\
+  {\color{red}Overleafは設定しておかないと日本語も使えません．}\\
+  IEEEのテンプレートもCloud LaTeX上で使用することができます．
+\end{frame}
+
+\begin{frame}{とりあえず動かす}
+  論文等を書き始める際，文書クラスの指定が必要になります．\\
+  今回は和文で論文を書く前提でjarticleで設定します．
+  \begin{tabular}{cc}
+    \begin{minipage}[t]{0.48\hsize}
+      \begin{block}{例}
+        \textbackslash documentclass[12pt]\{jarticle\}\\
+        \textbackslash begin\{document\}\\
+        これはサンプルです．\\
+        \textbackslash end\{document\}
+      \end{block}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\hsize}
+      \begin{block}{出力結果}
+        \vskip\baselineskip
+        \vskip.5\baselineskip
+        これはサンプルです．
+        \vskip\baselineskip
+        \vskip.5\baselineskip
+      \end{block}
+    \end{minipage}
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{Sectionの作成}
+  簡単に段落を作成する方法を記載しておきます．\\
+  texの場合は，すべて自動で段落番号を振ってくれます．
+  \begin{tabular}{cc}
+    \begin{minipage}[t]{0.38\hsize}
+      \begin{block}{例}
+        \textbackslash documentclass\{jarticle\}\\
+        \textbackslash begin\{document\}\\
+        \textbackslash section\{初めに\}\\
+        近年，少子高齢化の影響もあり・・・．\\
+        \textbackslash end\{document\}
+      \end{block}
+    \end{minipage}
+    \begin{minipage}[t]{0.58\hsize}
+      \begin{block}{出力結果}
+        \vskip\baselineskip
+        \vskip\baselineskip
+        1.初めに\\
+        \quad 近年，少子高齢化の影響もあり・・・.
+        \vskip\baselineskip
+        \vskip\baselineskip
+      \end{block}
+    \end{minipage}
+  \end{tabular}
+\end{frame}
+
+\section{図や表の挿入方法}
+\begin{frame}{図の挿入}
+  図の挿入に必要なパッケージはgraphicxです．\\
+  \textbackslash usepackage[ドライバ名]{graphicx}(ドライバ名はdvifmxとか.)\\
+  {\color{red}*これをプリアンブルに記述しておく必要があります．}\\
+  \begin{block}{例(画像ファイル拡張子はeps,pdf,jpg,pngなど)}
+    \begin{tabular}{cc}
+      \begin{minipage}[t]{0.65\hsize}
+      \textbackslash begin\{figure\}[htbp]\\
+      \textbackslash centering\\
+      \textbackslash includegraphics[width=0.5\textbackslash linewidth]\{souece/flog.png\}\\
+      \textbackslash caption\{flog\}\\
+      \textbackslash label\{fig:flog\}\\
+      \textbackslash end\{figure\}
+      \end{minipage}
+      \begin{minipage}[t]{0.3\hsize}
+        \begin{figure}[htbp]
+          \centering
+          \includegraphics[width=0.5\linewidth]{sorce/flog.png}
+          \caption{flog}
+          \label{fig:flog}
+        \end{figure}
+      \end{minipage}
+    \end{tabular}
+  \end{block}
+\end{frame}
+
+\begin{frame}{表の挿入}
+  \begin{block}{例}
+    \begin{tabular}{cc}
+      \begin{minipage}[t]{0.48\hsize}
+        \textbackslash begin\{table\}[htbp]\\
+        \textbackslash centering\\
+        \textbackslash caption\{表のキャプション\}\\
+        \textbackslash label\{tab:表のラベル\}\\
+        \textbackslash begin\{tabular\}\{c\textbar c\textbar c\}\\
+        \textbackslash hline\\
+        1 \& 2 \& 3 \textbackslash \textbackslash \textbackslash hline\\
+        4 \& 5 \& 6 \textbackslash \textbackslash \textbackslash hline\\
+        7 \& 8 \& 9 \textbackslash \textbackslash \textbackslash hline\\
+        \textbackslash end\{tabular\}\\
+        \textbackslash end\{table\}
+      \end{minipage}
+      \begin{minipage}[t]{0.48\hsize}
+        \begin{table}[htbp]
+          \centering
+          \caption{表のキャプション}
+          \label{tab:表のラベル}
+          \begin{tabular}{|c|c|c|}
+            \hline
+            1 & 2 & 3 \\ \hline
+            4 & 5 & 6 \\ \hline
+            7 & 8 & 9 \\ \hline
+          \end{tabular}
+        \end{table}
+      \end{minipage}
+    \end{tabular}
+  \end{block}
+\end{frame}
+
+\section{数式の作成}
+
+\begin{frame}{数式の作成}
+  数式を記述するときの一例を以下に示しておきます．\\
+  ここに記述しているもの以外にもあるので自分で調べてみてください．
+  \begin{tabular}{cc}
+    \begin{minipage}[t]{0.48\hsize}
+      \begin{block}{例}
+        \vskip.5\baselineskip
+        \begin{itemize}
+          \item \textbackslash frac\{a\}\{b\}
+          \item x\textasciicircum\{2\}
+          \item \textbackslash sqrt\{x\}
+          \item \textbackslash sin\ x\textbackslash cos(y) \textbackslash tan(a+b)
+          \item \textbackslash log\_a\ b
+          \item \textbackslash sum\_{i=1}\textasciicircum{10}x\_i
+        \end{itemize}
+      \end{block}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\hsize}
+      \begin{block}{出力結果}
+        \vskip.5\baselineskip
+        \begin{itemize}
+          \item $\frac{a}{b}$
+          \item $x^{2}$
+          \item $\sqrt{x}$
+          \item $\sin x\cos(x)\tan(a+b)$
+          \item $\log_a b$
+          \item $\sum_{i=1}^{10}x_i$
+        \end{itemize}
+      \end{block}
+    \end{minipage}
+  \end{tabular}
+\end{frame}
+
+\begin{frame}{数式の作成}
+  例として，万有引力の式を作成してみます．
+  \begin{tabular}{cc}
+    \begin{minipage}[t]{0.48\hsize}
+      \begin{block}{万有引力の法則}
+        \textbackslash documentclass\{jarticle\}\\
+        \textbackslash begin\{document\}\\
+        \textbackslash section\{万有引力公式\}\\
+        万有引力の公式は以下の通りである．\\
+        \textbackslash begin\{equation\}\\
+        F = G \textbackslash frac\{m\_1 m\_2\}\{r\textasciicircum\{2\}\}\\
+        \textbackslash end\{equation\}\\
+        \textbackslash end\{document\}
+      \end{block}
+    \end{minipage}
+    \begin{minipage}[t]{0.48\hsize}
+      \begin{block}{出力結果}
+        \vskip\baselineskip
+        \vskip\baselineskip
+        1.万有引力公式\\
+        \quad 万有引力の公式は以下の通りである．\\
+        \begin{equation}
+          F = G \frac{m_1 m_2}{r^{2}}
+        \end{equation}
+        \vskip\baselineskip
+        \vskip.3\baselineskip
+      \end{block}
+    \end{minipage}
+  \end{tabular}
+\end{frame}
+
+\section{bibを使った参考論文の引用方法}
+
+\begin{frame}{参考論文の引用方法1}
+  BibTeXを用いた引用 : まず，〇〇.bibを用意する必要がある\\
+  
+  適当な論文データを使用して説明します．\\
+  \vskip\baselineskip
+  LOWRY法の原著論文\\
+  {\color{blue}\url{https://doi.org/10.1016/S0021-9258(19)52451-6}}\cite{LOWRY1951265}\\
+  YOLOの原論文\\
+  {\color{blue}\url{http://arxiv.org/abs/1506.02640}}\cite{Yolo}
+\end{frame}
+
+\begin{frame}{参考論文の引用方法2}
+    テキストエディタなどを使って中身を書き換える．\\
+    {\color{red}基本google scholarで論文を検索すると,〇〇.bib形式のファイルが置いてある.\\
+    読んだ論文に関してはダウンロードしてまとめておくのがオススメ！}
+    \begin{tabular}{cc}
+      \begin{minipage}[t]{0.45\hsize}
+        \fontsize{5pt}{0cm}\selectfont{@article\{LOWRY1951265,\\
+        title = \{PROTEIN MEASUREMENT WITH THE FOLIN PHENOL REAGENT\},\\
+        journal = \{Journal of Biological Chemistry\},\\
+        volume = \{193\},\\
+        number = \{1\},\\
+        pages = \{265-275\},\\
+        year = \{1951\},\\
+        issn = \{0021-9258\},\\
+        doi = \{https://doi.org/10.1016/S0021-9258(19)52451-6\},\\
+        url = \{https://www.sciencedirect.com/science/article/pii/S0021925819524516\},\\
+        author = \{OliverH. Lowry and NiraJ. Rosebrough and A. Lewis Farr and RoseJ. Randall\}\\
+        \}}
+      \end{minipage} 
+      \begin{minipage}[t]{0.45\hsize}
+        \fontsize{5pt}{0cm}\selectfont{@article\{Yolo,\\
+        author       = \{Joseph Redmon and Santosh Kumar Divvala and Ross B. Girshick and Ali Farhadi\},\\
+        title        = \{You Only Look Once: Unified, Real-Time Object Detection\},\\
+        journal      = \{CoRR\},\\
+        volume       = \{abs/1506.02640\},\\
+        year         = \{2015\},\\
+        url          = \{http://arxiv.org/abs/1506.02640\},\\
+        eprinttype    = \{arXiv\},\\
+        eprint       = \{1506.02640\},\\
+        timestamp    = \{Mon, 13 Aug 2018 16:48:08 +0200\},\\
+        biburl       = \{https://dblp.org/rec/journals/corr/RedmonDGF15.bib\},\\
+        bibsource    = \{dblp computer science bibliography, https://dblp.org\}\\
+        \}}
+      \end{minipage} 
+    \end{tabular}
+\end{frame}
+
+\begin{frame}{参考論文の引用方法3}
+  BibTeXを用いた引用はstyleとbibliographyの指定が必要です．\\
+  \begin{tabular}{cc}
+    \begin{minipage}[t]{0.35\hsize}
+      \begin{block}{例}
+        \vskip\baselineskip
+        \textbackslash bibliographystyle\{junsrt\}\\
+        \textbackslash bibliography\{〇〇\}
+        \vskip.5\baselineskip
+        〇〇はbib拡張子なしで記述する
+      \end{block}
+    \end{minipage}
+    \begin{minipage}[t]{0.6\hsize}
+      \begin{block}{よく使うスタイル}
+        \begin{itemize}
+          \vskip\baselineskip
+          \item plainスタイル\quad ノーマルスタイル
+          \item abbrvスタイル\quad 下の名前がイニシャル
+          \item unsrtスタイル\quad 引用順に並ぶ
+          \item ieeetrスタイル\quad IEEEスタイル
+        \end{itemize}
+        \vskip.5\baselineskip
+      \end{block}
+    \end{minipage}
+  \end{tabular}
+\end{frame}
+
+\section{使用した参考文献まとめ}
+
+\begin{frame}[allowframebreaks]{参考文献}
+  \bibliographystyle{junsrt}
+  \bibliography{hoge} %bibtexファイル名
+\end{frame}
+
+\section{最後に}
+
+\begin{frame}{最後に}
+  このpdfもTeXで作成しています．\\
+  LaTeXBeamerクラスを用いることでスライドの作成を簡単に行うことができます．\\
+  基本的な書き方は，普通のTeXと同じなのでもし興味があればLaTeXを用いてスライドを作成してみてください．\\
+  \vskip\baselineskip
+  今回のスライドがLaTeXの基本的な書き方を理解するのに少しでも役に立てば幸いです．\\
+  書ききれていないことも多いので，興味があれば自分で調べてみてください．
+  このスライドのソースコードはgithubに上げておきます\\
+  {\color{blue}\url{https://github.com/Okome05/LaTeX_How-to-use}}
+\end{frame}
+\end{document}
