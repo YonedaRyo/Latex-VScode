@@ -106,3 +106,11 @@ LaTeXはコンパイルの過程で大量の中間ファイルが作成されま
  VScodeの設定を開き以下の部分を[onBuild]に変更するだけです．  
 ![autoclean](https://github.com/YonedaRyo/Latex-VScode/assets/107024163/59bbadeb-9a40-4297-ae02-ac7de59611a7)
 
+## 論文を書くときに画像を入れるとコンパイルエラーになる場合
+この場合はパッケージが足りていないことが多いです．  
+styファイルやclsファイルが学会から配られている場合はそのファイル内に以下の魔法を記載してみましょう  
+```
+\usepackage[dvipdfmx]{graphicx} % 画像の挿入、テキストや図の操作のためのパッケージ
+```
+この場合，元々\usepakage{graphicx}の記述があればそれを消してから記述しましょう.  
+
